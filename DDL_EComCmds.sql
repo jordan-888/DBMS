@@ -1,0 +1,23 @@
+CREATE TABLE IF NOT EXISTS new_table (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+ALTER TABLE new_table
+ADD COLUMN status VARCHAR(50);
+
+DROP TABLE IF EXISTS new_table;
+
+CREATE TABLE new_table (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    status VARCHAR(50)
+);
+
+TRUNCATE TABLE new_table;
+
+ALTER TABLE new_table RENAME TO renamed_table;
